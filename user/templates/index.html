@@ -1,1 +1,8 @@
-This is just a test page
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="{% url 'user_lists' %}" class="btn btn-primary btn-lg"> User Lists </a>
+<a href="{% url 'user_form' %}" class="btn btn-info btn-lg"> Create a user </a>
+
+{% endblock content %}
