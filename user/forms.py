@@ -9,7 +9,11 @@ class RegisterForm(ModelForm):
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'email']
-        widgets = {
+        widgets = {'username': TextInput(attrs={
+            'placeholder': 'Your unique username',
+            'autocomplete': 'off',
+            'class': 'form-control'
+        }),
           'first_name': TextInput(attrs={
                 'placeholder': 'Your Name',
                 'autocomplete': 'off',
@@ -20,7 +24,7 @@ class RegisterForm(ModelForm):
                 'autocomplete': 'off',
                 'class': 'form-control'}),
             'email': TextInput(attrs={
-                'placeholder': 'Enter your Email Address',
+                'placeholder': 'Enter Email Address',
                 'autocomplete': 'off',
                 'class': 'form-control'
             }),

@@ -4,7 +4,7 @@
 <div class="container">
 <div class="row">
 	<div class="col-sm-6">
-		 <form action="#" method="post" class="form" role="form">
+		 <form action="{% url 'user_form' %}" method="post" class="form" role="form">
                 {% csrf_token %}
                     <h2>Sign Up</h2>
                     <hr>
@@ -20,6 +20,9 @@
                            {{ registerform.last_name }}
                           </div>
                     </div>
+                    {{ registerform.username.errors }}
+                    {{ registerform.username }}
+
                     {{ registerform.email.errors }}
                     {{ registerform.email }}
 
